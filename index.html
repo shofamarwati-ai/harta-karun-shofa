@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Harta Karun untuk Kamu ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fondamento:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+	body {
+	 font-family: 'Fondamento', cursive;
+	 text-align: center;
+	 background: linear-gradient(to bottom, #f9e79f, #fad7a0);
+	 margin: 0;
+	 padding: 0;
+    }
+    h1 {
+      margin-top: 20px;
+      color: #6c3483;
+        }
+    h2 {
+      margin-top: 20px;
+      color: #6c3483;
+    }
+    .map {
+      margin: 30px auto;
+      width: 500px;
+      height: 300px;
+      background: url('https://imgur.com/ollKaFS.png') center/cover no-repeat;
+      position: relative;
+      border: 4px solid #6c3483;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .spot {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      cursor: pointer;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+    }
+    .treasure {
+      display: none;
+      margin-top: 20px;
+    }
+    .message {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 15px;
+      background: #f5b7b1;
+      color: #4a235a;
+      font-size: 1.2em;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 10px;
+      background: #af7ac5;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #884ea0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mas Galih,</h1>
+  <h2>bantu aku menemukan harta karunku yuk!</h2>
+  <p>Klik peti yang kamu rasa menyimpan harta karun milikku...</p>
+
+  <div class="map">
+    <!-- Titik palsu -->
+    <div class="spot" style="top:20px; left:40px;" onclick="wrongSpot()"></div>
+    <div class="spot" style="top:15px; left:170px;" onclick="wrongSpot()"></div>
+    <div class="spot" style="top:150px; left:190px;" onclick="wrongSpot()"></div>
+    <div class="spot" style="top:200px; left:30px;" onclick="wrongSpot()"></div>
+    <div class="spot" style="top:200px; left:370px;" onclick="wrongSpot()"></div>
+
+    <!-- Titik benar -->
+    <div class="spot" style="top:60px; left:290px;" onclick="showTreasure()"></div>
+  </div>
+
+  <div class="treasure" id="treasure">
+    <img src="https://imgur.com/nTzVl8W.png" alt="Peti Harta" width="150">
+    <br>
+    <button onclick="showMessage()">Buka Peti</button>
+  </div>
+
+  <div class="message" id="message">
+    💖 Yah, cepet banget nemunya. Harta karun dalam hidupku adalah KAMU. Makasih udah selalu ada buat aku. I wop you! 💖
+  </div>
+
+  <script>
+    function wrongSpot() {
+      alert("Oops, bukan di sini mas Galih. Coba lagi!");
+    }
+    function showTreasure() {
+      document.getElementById("treasure").style.display = "block";
+    }
+    function showMessage() {
+      document.getElementById("message").style.display = "block";
+    }
+  </script>
+</body>
+</html>
